@@ -10,12 +10,15 @@ Template Name: Sub categorias
             <?php if(function_exists('rdfa_breadcrumb')){ rdfa_breadcrumb(); } ?>
         </div>
     </div>
-</section>                                     
+</section>              
+                       
 <section>
    <div class="ax-slide-subhome">
        <div class="ax-line-banner base-color-<?php $dataPost = get_post_complete(get_the_ID()); echo $dataPost['serviciodenegocio']; ?>"></div>
         <div class="ax-content-slide-subhome">
-            <?php the_content(); ?>
+        <?php if (have_posts()) : while (have_posts()) : the_post();?>
+        <?php the_content(); ?>
+        <?php endwhile; endif; ?>
         </div>
     </div>
 </section>
@@ -30,6 +33,7 @@ Template Name: Sub categorias
         </article>
         <article>
             <div class="ax-content col span_4_of_12">
+                    <h1><?php the_title(); ?></h1>
                     <?php $dataPost = get_post_complete(get_the_ID()); ?>
                     <?php echo $dataPost['contenedorprincipal']; ?>
             </div>

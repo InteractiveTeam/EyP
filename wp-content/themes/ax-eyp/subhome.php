@@ -11,7 +11,7 @@ Template Name: Sub home
         </div>
     </div>
 </section>
-                                    
+<?php if (have_posts()) :  while (have_posts()) : the_post(); ?>
 <section>
    <div class="ax-slide-category">
         <div class="ax-content-slide-category">
@@ -29,7 +29,6 @@ Template Name: Sub home
     </div>
 </section>
 <!-- Contenido del post -->
-<?php if (have_posts()) :  while (have_posts()) : the_post(); ?>
 <section>
    <div class="ax-section ax-container ax-cont-<?php $dataPost = get_post_complete(get_the_ID()); echo $dataPost['serviciodenegocio']; ?>">
         <div class="ax-center">

@@ -131,3 +131,10 @@ if ( function_exists('register_sidebar') )
     'before_widget' => '',
     'after_widget' => '',
 ));
+
+if ( function_exists('register_sidebar') )
+    register_sidebar(array(
+    'name' => 'logo responsive',
+    'before_widget' => '',
+    'after_widget' => '',
+));

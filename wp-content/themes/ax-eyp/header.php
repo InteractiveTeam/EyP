@@ -42,6 +42,7 @@
     <section class="ax-cont-responsive">
         <div class="ax-nav-responsive">
             <i class="fa fa-times"></i>
+            <div class="ax-redes-rp"></div>
             <nav>
                 <div class="ax-cont-menu-responsive"></div>
             </nav>
@@ -63,7 +64,7 @@
                                    </div>
                                    <div class="col span_5_of_12 ax-cont-search-responsive">
                                         <div class="ax-link-prev">
-                                            <?php dynamic_sidebar("contactenos"); ?> 
+                                            <?php dynamic_sidebar("contáctenos"); ?> 
                                         </div>
                                         <div class="ax-social">
                                             <?php dynamic_sidebar("redes sociales"); ?> 
@@ -74,8 +75,9 @@
                            <div class="ax-center ax-mark-header">
                                <div class="ax-logo">
                                        <a href="<?php echo site_url(); ?>"><img alt="" src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" /></a>
+                                       <a class="ax-logo-responsive" href="<?php echo site_url(); ?>"><?php dynamic_sidebar("logo responsive"); ?></a>
                                </div>
-                               <a href="#" class="ax-openMenu"><i class="fa fa-bars"></i></a>
+                               
                                <div class="ax-nav-header">
                                    <nav>
                                        <ul class="ax-menu-items">
@@ -97,5 +99,8 @@
                            </div>
                        </div>
                    </header>
+                </div>
+                <div class="ax-info-responsive">
+                    <a href="#" class="ax-openMenu"><i class="fa fa-bars"></i><span>Menú</span></a>
                 </div>
             </section>

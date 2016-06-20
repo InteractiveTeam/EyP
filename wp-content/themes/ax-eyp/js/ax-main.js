@@ -2,8 +2,9 @@ $(document).ready(function(){
    $('body').animate({'opacity':'1'}, 1000 );
     
     var contRp = $('.ax-cont-responsive');
-    contRp.hide();
+    //contRp.hide();
     var menuIt = $(".ax-nav-header");
+    var menuTopHead = $(".ax-menu-header");
     var cMenuRp = $(".ax-cont-menu-responsive");
     var cMenu = $('.ax-mark-header')
     var openMenu = $('.ax-openMenu .fa');
@@ -13,14 +14,19 @@ $(document).ready(function(){
     var contSearchRp = $('.ax-cont-search-responsive');
     var contHeaderNav = $('.ax-mark-header');
     
+    var contenedorRp = $('.ax-info-responsive')
+    var contRedesRp = $('.ax-redes-rp')
+    
     function entrarMenu() {
         var widthPage = $(window).width();
         if(widthPage < 769){
             menuIt.appendTo(cMenuRp);
-            search.appendTo(contSearchRp)
+            search.appendTo(contenedorRp);
+            menuTopHead.appendTo(contRedesRp);
         }else {
             menuIt.appendTo(cMenu);
-            search.appendTo(contHeaderNav)
+            search.appendTo(contHeaderNav);
+            menuTopHead.prependTo($('.ax-header'))
         }
     }
     
@@ -35,18 +41,19 @@ $(document).ready(function(){
     //activar Menu Responsive
     
     openMenu.on("click", function(){
-        contRp.fadeToggle("fast");
-        $('.menuResponsive').animate({ "left": "-=60%" }, "slow" );
+        contRp.animate({ "right": "20%", "opacity": "1" }, 500 );
+        $('.ax-search-cont').fadeOut();
+        $('.fa-search').removeClass('ax-close-search')
     })
     
 	//cerrar menu
 	
 	closeMenu.on("click", function(){
-		contRp.fadeToggle("fast");
-        $('.menuResponsive').animate({ "left": "+=60%" }, "slow" );
+		contRp.animate({ "right": "100%", "opacity": "0"  }, 500 );
 	});
+    
     $('.ax-search-cont').hide();
-    $('.ax-search i').on('click', function(){
+    $('.fa-search').on('click', function(){
         $('.ax-search-cont').fadeToggle();
         $(this).toggleClass('ax-close-search');
     })
@@ -79,11 +86,11 @@ $(document).ready(function(){
     
     function subirNumeros(item, valNum){
         var numReset = 0;
-        var ValNumIncrt = setInterval(function(){ sumarNum() },40);
+        var ValNumIncrt = setInterval(function(){ sumarNum() },1);
         
         function sumarNum(){
             if(numReset < valNum){
-                numReset = numReset+15;
+                numReset = numReset+1;
                 item.text(numReset);
             }else {
                 clearInterval(ValNumIncrt);
